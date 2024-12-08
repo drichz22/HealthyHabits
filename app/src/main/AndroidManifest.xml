@@ -20,6 +20,13 @@
             android:name=".UserDatabaseHelper"
             android:exported="false" />
         <activity
+            android:name=".BaseNavbar"
+            android:exported="false" />
+        <activity
+            android:name=".BaseActivity"
+            android:exported="false"
+            android:theme="@style/Theme.HealthyHabits" />
+        <activity
             android:name=".EditProfile"
             android:exported="false" />
         <activity
