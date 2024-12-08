@@ -3,6 +3,10 @@ package id.ac.binus.healthyhabits;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
@@ -16,6 +20,10 @@ import com.google.android.material.navigation.NavigationBarView;
 
 public class MenuBMIChecker extends AppCompatActivity {
 
+    EditText inputHeight, inputWeight;
+    Button submitBtn;
+    TextView result1, result2, result3;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +34,15 @@ public class MenuBMIChecker extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        inputHeight = findViewById(R.id.inputHeight);
+        inputWeight = findViewById(R.id.inputWeight);
+        submitBtn = findViewById(R.id.submitBtn);
+        result1 = findViewById(R.id.resultText1);
+        result2 = findViewById(R.id.resultText2);
+        result3 = findViewById(R.id.resultText3);
         BottomNavigationView navbar = findViewById(R.id.bottomNavigationView);
+
+        //Navigation Bar
         navbar.setSelectedItemId(R.id.itemBMIChecker);
 
         navbar.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
@@ -42,6 +58,46 @@ public class MenuBMIChecker extends AppCompatActivity {
                     return true;
                 }
                 return false;
+            }
+        });
+
+
+        //Submit
+        submitBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String height = inputHeight.getText().toString();
+                String weight = inputWeight.getText().toString();
+
+                if(!height.isEmpty() && !weight.isEmpty()){
+                    double heightDouble = Double.parseDouble(height) / 100; // Ubah ke meter
+                    double weightDouble = Double.parseDouble(weight);
+
+                    double bmi = weightDouble / (heightDouble * heightDouble);
+                    String category;
+                    if (bmi < 18.5) {
+                        category = "UNDERWEIGHT";
+                        result1.setText("Your BMI is: " + String.format("%.2f", bmi) + "\nCategory: " + category);
+                        result2.setText("Baca dan ikuti tips-tips yang diberikan");
+                        result3.setText("SEMANGAT!!");
+                    } else if (bmi >= 18.5 && bmi < 24.9) {
+                        category = "NORMAL WEIGHT";
+                        result1.setText("Your BMI is: " + String.format("%.2f", bmi) + "\nCategory: " + category);
+                        result2.setText("Berat dan tinggi badanmu ideal");
+                        result3.setText("Pertahankan!!");
+                    } else if (bmi >= 25 && bmi < 29.9) {
+                        category = "OVERWEIGHT";
+                        result1.setText("Your BMI is: " + String.format("%.2f", bmi) + "\nCategory: " + category);
+                        result2.setText("Baca dan ikuti tips-tips yang diberikan");
+                        result3.setText("SEMANGAT!!");
+                    } else {
+                        category = "OBESE";
+                        result1.setText("Your BMI is: " + String.format("%.2f", bmi) + "\nCategory: " + category);
+                        result2.setText("Baca dan ikuti tips-tips yang diberikan");
+                        result3.setText("SEMANGAT!!");
+                    }
+
+                }
             }
         });
     }
