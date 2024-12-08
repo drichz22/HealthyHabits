@@ -57,7 +57,7 @@
     <Button
         android:layout_width="181dp"
         android:layout_height="57dp"
-        android:id="@+id/daftarBtn"
+        android:id="@+id/loginBtn"
         android:text="Login"
         android:fontFamily="@font/poppins_bold"
         android:textSize="18dp"
@@ -98,6 +98,38 @@
             android:textSize="12dp"/>
 
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:background="@drawable/custom_google_sign_button"
+        android:layout_gravity="center"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:id="@+id/signInGoogleBtn">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign in with Google"
+            android:textSize="16sp"
+            android:fontFamily="@font/poppins_semibold"
+            android:layout_gravity="center_vertical"
+            android:textAllCaps="false"
+            android:textColor="#000000"/>
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/google_logo"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="2dp" />
+
+    </LinearLayout>
+
 
     <View
         android:layout_width="0dp"

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import androidx.activity.EdgeToEdge;
@@ -19,6 +20,7 @@ import com.google.android.material.navigation.NavigationBarView;
 public class Beranda extends AppCompatActivity {
 
     LinearLayout MenuGiziMakanan, MenuAktivitasSehat, MenuRumahSehat, MenuPlanning, MenuBMIChecker;
+    ImageView navigationEditProfile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +56,7 @@ public class Beranda extends AppCompatActivity {
         MenuRumahSehat = findViewById(R.id.MenuRumahSehat);
         MenuPlanning = findViewById(R.id.MenuPlanning);
         MenuBMIChecker = findViewById(R.id.MenuBMIChecker);
+        navigationEditProfile = findViewById(R.id.MenuEditProfile);
 
         MenuGiziMakanan.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,6 +94,14 @@ public class Beranda extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Beranda.this, MenuBMIChecker.class);
+                startActivity(intent);
+            }
+        });
+
+        navigationEditProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Beranda.this, EditProfile.class);
                 startActivity(intent);
             }
         });
