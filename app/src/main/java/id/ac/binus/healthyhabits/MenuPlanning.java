@@ -58,6 +58,7 @@ public class MenuPlanning extends AppCompatActivity {
         BottomNavigationView navbar = findViewById(R.id.bottomNavigationView);
         navbar.setSelectedItemId(R.id.itemPlanning);
 
+
         navbar.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {

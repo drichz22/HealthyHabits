@@ -140,6 +140,36 @@ public class UserDatabaseHelper extends SQLiteOpenHelper {
         return userImage;
     }
 
+    public void getAllData() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = null;
+
+        try {
+            String query = "SELECT * FROM " + TABLE_USER; // Replace with your table name
+            cursor = db.rawQuery(query, null);
+
+            if (cursor.moveToFirst()) {
+                do {
+                    String username = cursor.getString(cursor.getColumnIndexOrThrow("username"));
+                    String email = cursor.getString(cursor.getColumnIndexOrThrow("email"));
+                    String password = cursor.getString(cursor.getColumnIndexOrThrow("password"));
+                    int userImage = cursor.getInt(cursor.getColumnIndexOrThrow("userImage"));
+
+                    // Log data for inspection in Logcat
+                    Log.d("DBHelper", "User: " + username + ", Email: " + email +
+                            ", Password: " + password + ", Image: " + userImage);
+                } while (cursor.moveToNext());
+            }
+        } catch (Exception e) {
+            Log.e("DBHelper", "Error reading data", e);
+        } finally {
+            if (cursor != null) {
+                cursor.close();
+            }
+            db.close();
+        }
+    }
+
     public int getUserIdByUsername(String username) {
         SQLiteDatabase db = this.getReadableDatabase();
         int userId = -1;
