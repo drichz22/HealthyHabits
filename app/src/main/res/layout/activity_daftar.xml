@@ -16,7 +16,7 @@
         android:textSize="36dp"
         android:layout_gravity="center"
         android:fontFamily="@font/poppins_extrabold"
-        android:textColor="#000000"/>
+        style="@style/text"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -93,6 +93,38 @@
         android:layout_gravity="center"
         android:textAllCaps="false"
         android:layout_marginTop="40dp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sudah punya akun?"
+            style="@style/text"
+            android:fontFamily="@font/poppins_regular"
+            android:layout_gravity="center"
+            android:textSize="12dp"/>
+
+        <View
+            android:layout_width="8dp"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/directToLogin"
+            android:text="Login"
+            style="@style/text"
+            android:fontFamily="@font/poppins_bold"
+            android:layout_gravity="center"
+            android:textSize="12dp"/>
+
+    </LinearLayout>
 
     <View
         android:layout_width="0dp"

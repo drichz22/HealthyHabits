@@ -4,4 +4,18 @@
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
     </style>
+
+    <!-- Dark Mode -->
+    <style name="screen">
+        <item name="android:background">#121212</item>
+    </style>
+
+    <style name="text">
+        <item name="android:textColor">#ffffff</item>
+    </style>
+
+    <style name="navigation">
+        <item name="android:background">@color/black</item>
+    </style>
+
 </resources>

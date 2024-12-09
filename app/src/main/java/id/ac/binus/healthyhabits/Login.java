@@ -93,6 +93,7 @@ public class Login extends AppCompatActivity {
                         if (email == null) email = "";
 
                         int userImage = dbHelper.getImagebyUsername(username);
+                        if (userImage == -1) userImage = R.drawable.default_profpic;
 
                         editor.putInt("userId", userId);
                         editor.putString("username", username);
