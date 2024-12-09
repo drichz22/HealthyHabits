@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Beranda"
+        android:icon="@drawable/baseline_home_24"
+        android:id="@+id/itemBeranda"/>
+    <item android:title="Planning"
+        android:icon="@drawable/to_do_list"
+        android:id="@+id/itemPlanning"/>
+    <item android:title="BMI Checker"
+        android:icon="@drawable/weight_scale"
+        android:id="@+id/itemBMIChecker"/>
+</menu>
