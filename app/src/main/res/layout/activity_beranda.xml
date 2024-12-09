@@ -43,7 +43,8 @@
                         android:textSize="16sp"
                         android:fontFamily="@font/poppins_regular"
                         android:layout_gravity="center_vertical"
-                        android:textAllCaps="false" />
+                        android:textAllCaps="false"
+                        style="@style/text"/>
 
                     <ImageView
                         android:layout_width="24dp"
@@ -94,7 +95,8 @@
                         android:textAlignment="center"
                         android:textSize="12sp"
                         android:fontFamily="@font/poppins_regular"
-                        android:textAllCaps="false" />
+                        android:textAllCaps="false"
+                        android:textColor="@color/black"/>
 
                 </LinearLayout>
 
@@ -116,14 +118,15 @@
                         android:src="@drawable/aktivitas_sehat" />
 
                     <TextView
+                        android:textColor="@color/black"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="30dp"
                         android:layout_marginTop="2dp"
+                        android:fontFamily="@font/poppins_regular"
                         android:text="Aktivitas Sehat"
                         android:textAlignment="center"
-                        android:textSize="12sp"
-                        android:fontFamily="@font/poppins_regular"
-                        android:textAllCaps="false" />
+                        android:textAllCaps="false"
+                        android:textSize="12sp" />
 
                 </LinearLayout>
 
@@ -152,7 +155,8 @@
                         android:textAlignment="center"
                         android:textSize="12sp"
                         android:fontFamily="@font/poppins_regular"
-                        android:textAllCaps="false" />
+                        android:textAllCaps="false"
+                        android:textColor="@color/black"/>
 
                 </LinearLayout>
 
@@ -189,7 +193,8 @@
                         android:textAlignment="center"
                         android:textSize="12sp"
                         android:fontFamily="@font/poppins_regular"
-                        android:textAllCaps="false" />
+                        android:textAllCaps="false"
+                        android:textColor="@color/black"/>
 
                 </LinearLayout>
 
@@ -218,7 +223,8 @@
                         android:textAlignment="center"
                         android:textSize="12sp"
                         android:fontFamily="@font/poppins_regular"
-                        android:textAllCaps="false" />
+                        android:textAllCaps="false"
+                        android:textColor="@color/black"/>
 
                 </LinearLayout>
 
@@ -254,7 +260,7 @@
                         android:fontFamily="@font/poppins_bold"
                         android:text="MENGAPA KONSUMSI MAKANAN SEHAT?"
                         android:textAlignment="center"
-                        android:textColor="#000000"
+                        style="@style/text"
                         android:textSize="16dp" />
 
                     <TextView
@@ -262,7 +268,7 @@
                         android:layout_height="wrap_content"
                         android:text="• Meningkatkan imun tubuh\n• Memperkuat tulang\n• Mengurangi risiko penyakit mematikan"
                         android:fontFamily="@font/poppins_semibold"
-                        android:textColor="#000000"
+                        style="@style/text"
                         android:textSize="14dp"
                         android:layout_marginStart="50dp"
                         android:layout_marginTop="10dp" />
@@ -293,7 +299,7 @@
                         android:layout_height="wrap_content"
                         android:text="MENGAPA HARUS MELAKUKAN AKTIVITAS SEHAT?"
                         android:fontFamily="@font/poppins_bold"
-                        android:textColor="#000000"
+                        style="@style/text"
                         android:layout_marginStart="25dp"
                         android:textSize="16dp"
                         android:textAlignment="center" />
@@ -303,7 +309,7 @@
                         android:layout_height="wrap_content"
                         android:text="• Menurunkan tekanan darah\n• Menurunkan stres\n• Menyehatkan jantung"
                         android:fontFamily="@font/poppins_semibold"
-                        android:textColor="#000000"
+                        style="@style/text"
                         android:textSize="14dp"
                         android:layout_marginStart="50dp"
                         android:layout_marginTop="10dp" />
@@ -334,7 +340,7 @@
                         android:layout_height="wrap_content"
                         android:text="MENGAPA HARUS TINGGAL DI RUMAH SEHAT?"
                         android:fontFamily="@font/poppins_bold"
-                        android:textColor="#000000"
+                        style="@style/text"
                         android:layout_marginStart="25dp"
                         android:textSize="16dp"
                         android:textAlignment="center" />
@@ -344,7 +350,7 @@
                         android:layout_height="wrap_content"
                         android:text="• Terhindar dari berbagai penyakit\n• Lebih nyaman di rumah\n• Aman dari segala bahaya kecelakaan"
                         android:fontFamily="@font/poppins_semibold"
-                        android:textColor="#000000"
+                        style="@style/text"
                         android:textSize="14dp"
                         android:layout_marginStart="50dp"
                         android:layout_marginTop="10dp" />
@@ -360,13 +366,13 @@
         android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
-        app:itemIconTint="@color/black"
+        style="@style/navigation"
+        app:itemIconTint="#28844B"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:labelVisibilityMode="labeled"
-        app:itemTextColor="#000000"
+        app:itemTextColor="#28844B"
         app:menu="@menu/bottom_navmenu"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

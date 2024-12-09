@@ -55,16 +55,6 @@ public class UserDatabaseHelper extends SQLiteOpenHelper {
         return isLoggedIn;
     }
 
-    public boolean editProfilePicture(String username, int newUserImage){
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues values = new ContentValues();
-        values.put("userImage", newUserImage);
-
-        int rowsUpdated = db.update(TABLE_NAME, values, "username=?", new String[]{username});
-        db.close();
-        return rowsUpdated > 0;
-    }
-
     public boolean isUsernameUnique(String username){
         SQLiteDatabase db = this.getReadableDatabase();
         String query = "SELECT * FROM " + TABLE_NAME + " WHERE username=?";
@@ -113,7 +103,7 @@ public class UserDatabaseHelper extends SQLiteOpenHelper {
 
     public int getImagebyUsername(String username){
         SQLiteDatabase db = this.getReadableDatabase();
-        int userImage = R.drawable.default_profpic;
+        int userImage = -1;
         Cursor cursor = null;
 
         try {
@@ -135,6 +125,34 @@ public class UserDatabaseHelper extends SQLiteOpenHelper {
         return userImage;
     }
 
+    public void getAllData() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = null;
 
+        try {
+            String query = "SELECT * FROM " + TABLE_NAME; // Replace with your table name
+            cursor = db.rawQuery(query, null);
+
+            if (cursor.moveToFirst()) {
+                do {
+                    String username = cursor.getString(cursor.getColumnIndexOrThrow("username"));
+                    String email = cursor.getString(cursor.getColumnIndexOrThrow("email"));
+                    String password = cursor.getString(cursor.getColumnIndexOrThrow("password"));
+                    int userImage = cursor.getInt(cursor.getColumnIndexOrThrow("userImage"));
+
+                    // Log data for inspection in Logcat
+                    Log.d("DBHelper", "User: " + username + ", Email: " + email +
+                            ", Password: " + password + ", Image: " + userImage);
+                } while (cursor.moveToNext());
+            }
+        } catch (Exception e) {
+            Log.e("DBHelper", "Error reading data", e);
+        } finally {
+            if (cursor != null) {
+                cursor.close();
+            }
+            db.close();
+        }
+    }
 
 }

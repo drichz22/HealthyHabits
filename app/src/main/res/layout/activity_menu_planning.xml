@@ -17,13 +17,13 @@
         android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
-        app:itemIconTint="@color/black"
+        style="@style/navigation"
+        app:itemIconTint="#28844B"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:labelVisibilityMode="labeled"
-        app:itemTextColor="#000000"
+        app:itemTextColor="#28844B"
         app:menu="@menu/bottom_navmenu"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

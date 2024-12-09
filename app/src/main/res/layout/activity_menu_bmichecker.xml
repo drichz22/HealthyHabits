@@ -35,7 +35,8 @@
                 android:textSize="16sp"
                 android:fontFamily="@font/poppins_regular"
                 android:layout_gravity="center_vertical"
-                android:textAllCaps="false" />
+                android:textAllCaps="false"
+                style="@style/text"/>
 
             <ImageView
                 android:layout_width="24dp"
@@ -101,7 +102,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
+            style="@style/text"
             android:textStyle="bold"
             android:textSize="18dp"
             android:paddingTop="30dp"
@@ -119,7 +120,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
+            style="@style/text"
             android:textStyle="bold"
             android:textSize="18dp"
             android:paddingTop="30dp"
@@ -194,13 +195,13 @@
         android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
-        app:itemIconTint="@color/black"
+        style="@style/navigation"
+        app:itemIconTint="#28844B"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:labelVisibilityMode="labeled"
-        app:itemTextColor="#000000"
+        app:itemTextColor="#28844B"
         app:menu="@menu/bottom_navmenu"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

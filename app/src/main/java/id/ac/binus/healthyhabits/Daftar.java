@@ -2,9 +2,11 @@ package id.ac.binus.healthyhabits;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -17,6 +19,7 @@ public class Daftar extends AppCompatActivity {
 
     EditText daftarUsername, daftarEmail, daftarPassword, confirmPassword;
     Button daftarBtn;
+    TextView directToLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,8 +37,19 @@ public class Daftar extends AppCompatActivity {
         daftarPassword = findViewById(R.id.daftarPassword);
         confirmPassword = findViewById(R.id.daftarConfirmPassword);
         daftarBtn = findViewById(R.id.daftarBtn);
+        directToLogin = findViewById(R.id.directToLogin);
+
+        directToLogin.setText(Html.fromHtml("<u>Login</u>", Html.FROM_HTML_MODE_LEGACY));
 
         UserDatabaseHelper dbHelper = new UserDatabaseHelper(Daftar.this);
+
+        directToLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Daftar.this, Login.class);
+                startActivity(intent);
+            }
+        });
 
         daftarBtn.setOnClickListener(new View.OnClickListener() {
             @Override
