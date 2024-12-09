@@ -85,6 +85,7 @@ public class Login extends AppCompatActivity {
                     if(isLoggedIn){
                         Toast.makeText(Login.this, "Login berhasil!", Toast.LENGTH_SHORT).show();
 
+                        int userId = dbHelper.getUserIdByUsername(username);
                         SharedPreferences sharedPreferences = getSharedPreferences("UserData", MODE_PRIVATE);
                         SharedPreferences.Editor editor = sharedPreferences.edit();
 
@@ -93,6 +94,7 @@ public class Login extends AppCompatActivity {
 
                         int userImage = dbHelper.getImagebyUsername(username);
 
+                        editor.putInt("userId", userId);
                         editor.putString("username", username);
                         editor.putString("email", email);
                         editor.putInt("userImage", userImage);
