@@ -13,7 +13,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button loginBtn, daftarBtn;
+    private Button loginBtn, daftarBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

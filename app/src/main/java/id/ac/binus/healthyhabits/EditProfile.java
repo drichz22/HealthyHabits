@@ -35,17 +35,17 @@ import java.net.URI;
 
 public class EditProfile extends AppCompatActivity {
 
-    Switch nightModeSwitch;
-    boolean nightMode;
-    ImageView berandaNavigation, editProfPicImg;
-    TextView editUsername, editEmail;
-    Button signOutBtn;
-    GoogleSignInOptions gso;
-    GoogleSignInClient gsc;
-    LinearLayout editProfPicBtn;
+    private Switch nightModeSwitch;
+    private boolean nightMode;
+    private ImageView berandaNavigation, editProfPicImg;
+    private TextView editUsername, editEmail;
+    private Button signOutBtn;
+    private GoogleSignInOptions gso;
+    private GoogleSignInClient gsc;
+    private LinearLayout editProfPicBtn;
 
-    SharedPreferences modePreferences;
-    SharedPreferences.Editor modeEditor;
+    private SharedPreferences modePreferences;
+    private SharedPreferences.Editor modeEditor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,10 +62,6 @@ public class EditProfile extends AppCompatActivity {
         gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
         gsc = GoogleSignIn.getClient(EditProfile.this, gso);
         nightModeSwitch = findViewById(R.id.darkModeSwitcher);
-
-        UserDatabaseHelper dbHelper = new UserDatabaseHelper(EditProfile.this);
-
-        dbHelper.getAllData();
 
         GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(EditProfile.this);
         if (acct != null) {

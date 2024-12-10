@@ -5,10 +5,12 @@ import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import androidx.activity.EdgeToEdge;
@@ -36,6 +38,7 @@ public class MenuPlanning extends AppCompatActivity {
     private ArrayList<String> plansList;
     private ArrayAdapter<String> adapter;
     private HashMap<String, Integer> planIdMap;
+    private ImageView navigationEditProfile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +60,7 @@ public class MenuPlanning extends AppCompatActivity {
         planIdMap = new HashMap<>();
         BottomNavigationView navbar = findViewById(R.id.bottomNavigationView);
         navbar.setSelectedItemId(R.id.itemPlanning);
-
+        navigationEditProfile = findViewById(R.id.MenuEditProfile);
 
         navbar.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
@@ -72,6 +75,14 @@ public class MenuPlanning extends AppCompatActivity {
                     return true;
                 }
                 return false;
+            }
+        });
+
+        navigationEditProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MenuPlanning.this, EditProfile.class);
+                startActivity(intent);
             }
         });
 

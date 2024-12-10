@@ -19,8 +19,8 @@ import com.google.android.material.navigation.NavigationBarView;
 
 public class Beranda extends AppCompatActivity {
 
-    LinearLayout MenuGiziMakanan, MenuAktivitasSehat, MenuRumahSehat, MenuPlanning, MenuBMIChecker;
-    ImageView navigationEditProfile;
+    private LinearLayout MenuGiziMakanan, MenuAktivitasSehat, MenuRumahSehat, MenuPlanning, MenuBMIChecker;
+    private ImageView navigationEditProfile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -6,6 +6,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -20,9 +21,10 @@ import com.google.android.material.navigation.NavigationBarView;
 
 public class MenuBMIChecker extends AppCompatActivity {
 
-    EditText inputHeight, inputWeight;
-    Button submitBtn;
-    TextView result1, result2, result3;
+    private EditText inputHeight, inputWeight;
+    private Button submitBtn;
+    private TextView result1, result2, result3;
+    private ImageView navigationEditProfile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +43,7 @@ public class MenuBMIChecker extends AppCompatActivity {
         result2 = findViewById(R.id.resultText2);
         result3 = findViewById(R.id.resultText3);
         BottomNavigationView navbar = findViewById(R.id.bottomNavigationView);
+        navigationEditProfile = findViewById(R.id.MenuEditProfile);
 
         //Navigation Bar
         navbar.setSelectedItemId(R.id.itemBMIChecker);
@@ -61,6 +64,13 @@ public class MenuBMIChecker extends AppCompatActivity {
             }
         });
 
+        navigationEditProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MenuBMIChecker.this, EditProfile.class);
+                startActivity(intent);
+            }
+        });
 
         //Submit
         submitBtn.setOnClickListener(new View.OnClickListener() {

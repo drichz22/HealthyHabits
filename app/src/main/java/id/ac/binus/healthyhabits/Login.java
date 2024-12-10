@@ -27,13 +27,13 @@ import com.google.android.gms.tasks.Task;
 
 public class Login extends AppCompatActivity {
 
-    EditText loginUsername, loginPassword;
-    TextView directToDaftar;
-    Button loginBtn;
-    LinearLayout signInGoogleBtn;
+    private EditText loginUsername, loginPassword;
+    private TextView directToDaftar;
+    private Button loginBtn;
+    private LinearLayout signInGoogleBtn;
 
-    GoogleSignInOptions gso;
-    GoogleSignInClient gsc;
+    private GoogleSignInOptions gso;
+    private GoogleSignInClient gsc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

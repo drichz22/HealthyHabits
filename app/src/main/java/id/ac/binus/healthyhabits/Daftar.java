@@ -17,9 +17,9 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class Daftar extends AppCompatActivity {
 
-    EditText daftarUsername, daftarEmail, daftarPassword, confirmPassword;
-    Button daftarBtn;
-    TextView directToLogin;
+    private EditText daftarUsername, daftarEmail, daftarPassword, confirmPassword;
+    private Button daftarBtn;
+    private TextView directToLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
