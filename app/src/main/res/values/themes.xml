@@ -18,5 +18,13 @@
         <item name="android:background">@color/white</item>
     </style>
 
+    <style name="ProfileBtn">
+        <item name="android:background">@drawable/prof_pic</item>
+    </style>
+
+    <style name="BerandaBtn">
+        <item name="android:background">@drawable/navigation_beranda</item>
+    </style>
+
     <style name="Theme.HealthyHabits" parent="Base.Theme.HealthyHabits" />
 </resources>

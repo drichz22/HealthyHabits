@@ -60,7 +60,7 @@
                     android:layout_width="50dp"
                     android:id="@+id/MenuEditProfile"
                     android:layout_height="50dp"
-                    android:background="@drawable/prof_pic"
+                    style="@style/ProfileBtn"
                     android:layout_marginLeft="130dp" />
 
             </LinearLayout>
@@ -152,74 +152,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="2dp"
                         android:text="Rumah Sehat"
-                        android:textAlignment="center"
-                        android:textSize="12sp"
-                        android:fontFamily="@font/poppins_regular"
-                        android:textAllCaps="false"
-                        android:textColor="@color/black"/>
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="30dp">
-
-                <LinearLayout
-                    android:layout_width="90dp"
-                    android:layout_height="120dp"
-                    android:id="@+id/MenuPlanning"
-                    android:orientation="vertical"
-                    android:background="@drawable/custom_beranda_button_ripple"
-                    android:gravity="center"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:padding="3dp"
-                    android:layout_marginStart="65dp">
-
-                    <ImageView
-                        android:layout_width="81dp"
-                        android:layout_height="81dp"
-                        android:src="@drawable/planning" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"
-                        android:text="Planning"
-                        android:textAlignment="center"
-                        android:textSize="12sp"
-                        android:fontFamily="@font/poppins_regular"
-                        android:textAllCaps="false"
-                        android:textColor="@color/black"/>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="90dp"
-                    android:layout_height="120dp"
-                    android:id="@+id/MenuBMIChecker"
-                    android:orientation="vertical"
-                    android:background="@drawable/custom_beranda_button_ripple"
-                    android:gravity="center"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:padding="3dp"
-                    android:layout_marginStart="30dp">
-
-                    <ImageView
-                        android:layout_width="81dp"
-                        android:layout_height="81dp"
-                        android:src="@drawable/bmi_checker" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"
-                        android:text="BMI Checker"
                         android:textAlignment="center"
                         android:textSize="12sp"
                         android:fontFamily="@font/poppins_regular"

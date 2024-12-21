@@ -50,7 +50,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:id="@+id/MenuEditProfile"
-            android:background="@drawable/prof_pic"
+            style="@style/ProfileBtn"
             android:layout_marginLeft="150dp" />
     </LinearLayout>
 

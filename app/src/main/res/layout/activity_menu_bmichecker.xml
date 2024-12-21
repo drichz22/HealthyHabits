@@ -51,7 +51,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:id="@+id/MenuEditProfile"
-            android:background="@drawable/prof_pic"
+            style="@style/ProfileBtn"
             android:layout_marginLeft="150dp" />
     </LinearLayout>
 
@@ -115,8 +115,9 @@
             android:layout_height="wrap_content"
             android:inputType="number"
             android:textSize="18dp"
-            android:textColor="#000000"
             android:hint="Height"
+            android:textColorHint="#000000"
+            android:textColor="#000000"
             android:background="@drawable/rounded_edit_text"
             android:padding="6dp"/>
 
@@ -136,6 +137,7 @@
             android:layout_height="wrap_content"
             android:inputType="number"
             android:textSize="18dp"
+            android:textColorHint="#000000"
             android:textColor="#000000"
             android:hint="Weight"
             android:background="@drawable/rounded_edit_text"
@@ -169,7 +171,7 @@
             android:id="@+id/resultText1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
+            style="@style/text"
             android:text=""
             android:textSize="25dp"
             android:gravity="center"
@@ -179,7 +181,7 @@
             android:id="@+id/resultText2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
+            style="@style/text"
             android:text=""
             android:textSize="18dp"
             android:gravity="center"

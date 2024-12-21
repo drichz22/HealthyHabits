@@ -54,8 +54,6 @@ public class Beranda extends AppCompatActivity {
         MenuGiziMakanan = findViewById(R.id.MenuGiziMakanan);
         MenuAktivitasSehat = findViewById(R.id.MenuAktivitasSehat);
         MenuRumahSehat = findViewById(R.id.MenuRumahSehat);
-        MenuPlanning = findViewById(R.id.MenuPlanning);
-        MenuBMIChecker = findViewById(R.id.MenuBMIChecker);
         navigationEditProfile = findViewById(R.id.MenuEditProfile);
 
         MenuGiziMakanan.setOnClickListener(new View.OnClickListener() {
@@ -78,22 +76,6 @@ public class Beranda extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Beranda.this, MenuRumahSehat.class);
-                startActivity(intent);
-            }
-        });
-
-        MenuPlanning.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Beranda.this, MenuPlanning.class);
-                startActivity(intent);
-            }
-        });
-
-        MenuBMIChecker.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Beranda.this, MenuBMIChecker.class);
                 startActivity(intent);
             }
         });
