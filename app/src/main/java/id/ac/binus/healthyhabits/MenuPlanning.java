@@ -35,8 +35,8 @@ public class MenuPlanning extends AppCompatActivity {
     private UserDatabaseHelper dbHelper;
     private int currentUserId; // Ubah sesuai user yang login
     private String selectedDate;  // Format YYYY-MM-DD
-    private ArrayList<String> plansList;
-    private ArrayAdapter<String> adapter;
+    private ArrayList<DataModel> plansList;
+    private ContentAdapter adapter;
     private HashMap<String, Integer> planIdMap;
     private ImageView navigationEditProfile;
 
@@ -86,7 +86,8 @@ public class MenuPlanning extends AppCompatActivity {
             }
         });
 
-        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, plansList);
+//        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, plansList);
+        adapter = new ContentAdapter(getApplicationContext(), plansList);
         plansListView.setAdapter(adapter);
         calendarView.setOnDateChangeListener((view, year, month, dayOfMonth) -> {
             // Format tanggal yang dipilih
@@ -113,8 +114,10 @@ public class MenuPlanning extends AppCompatActivity {
         });
 
         plansListView.setOnItemClickListener((parent, view, position, id) -> {
-            String planDescription = plansList.get(position);
-            int planId = planIdMap.get(planDescription);
+//            String planDescription = plansList.get(position).getPlan_desc();
+//            int planId = planIdMap.get(planDescription);
+            DataModel selectedPlan = plansList.get(position);
+            int planId = selectedPlan.getPlan_id();
 
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle("Delete Plan")
@@ -148,7 +151,9 @@ public class MenuPlanning extends AppCompatActivity {
         while (cursor.moveToNext()) {
             int planId = cursor.getInt(cursor.getColumnIndexOrThrow("plan_id"));
             String description = cursor.getString(cursor.getColumnIndexOrThrow("plan_desc"));
-            plansList.add(description);
+            String date = cursor.getString(cursor.getColumnIndexOrThrow("plan_date"));
+            DataModel data = new DataModel(planId, description, date);
+            plansList.add(data);
             planIdMap.put(description, planId);
         }
         cursor.close();
