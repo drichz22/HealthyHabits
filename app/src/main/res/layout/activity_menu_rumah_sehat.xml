@@ -5,12 +5,258 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginTop="20dp"
     tools:context=".MenuRumahSehat">
 
-    <TextView
+    <!-- Search Section -->
+    <LinearLayout
+        android:id="@+id/searchContainer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Rumah Sehat"
-        tools:ignore="MissingConstraints" />
+        android:orientation="horizontal"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
+        <LinearLayout
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:background="@drawable/custom_search_button"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Search"
+                android:textSize="16sp"
+                android:fontFamily="@font/poppins_regular"
+                android:layout_gravity="center_vertical"
+                android:textAllCaps="false"
+                style="@style/text" />
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/search"
+                android:layout_gravity="center"
+                android:layout_marginStart="35dp"
+                android:layout_marginBottom="4dp" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/MenuEditProfile"
+            style="@style/ProfileBtn"
+            android:layout_marginLeft="150dp" />
+    </LinearLayout>
+
+    <!-- Title Section -->
+    <LinearLayout
+        android:id="@+id/RumahSehatTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:gravity="center"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/rounded_background"
+        android:padding="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/searchContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:layout_width="61dp"
+            android:layout_height="61dp"
+            android:layout_marginRight="30dp"
+            android:src="@drawable/rumah_sehat"
+            android:id="@+id/imgGizi" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rumah Sehat"
+            android:textSize="30dp"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Card: Syarat Rumah Sehat -->
+    <LinearLayout
+        android:id="@+id/cardSyaratRumahSehat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/rounded_edit_text"
+        android:padding="1dp"
+        app:layout_constraintTop_toBottomOf="@id/RumahSehatTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:layout_width="61dp"
+            android:layout_height="61dp"
+            android:layout_margin="20dp"
+            android:src="@drawable/syarat_rumah_sehat"
+            android:id="@+id/syaratRumahSehat" />
+
+        <LinearLayout
+            android:id="@+id/contentSyaratRumahSehat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/rounded_edit_text"
+            android:padding="10dp"
+            app:layout_constraintTop_toBottomOf="@id/RumahSehatTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SYARAT RUMAH SEHAT"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:layout_marginBottom="6dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="• Memenuhi kebutuhan fisiologis dan psikologis\n• Mencegah penyakit\n• Mencegah kecelakaan"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Card: Komponen Rumah Sehat -->
+    <LinearLayout
+        android:id="@+id/cardKomponenRumahSehat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/rounded_edit_text"
+        android:padding="1dp"
+        app:layout_constraintTop_toBottomOf="@id/cardSyaratRumahSehat"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:layout_width="61dp"
+            android:layout_height="61dp"
+            android:layout_margin="20dp"
+            android:src="@drawable/komponen_rumah_sehat"
+            android:id="@+id/komponenRumahSehat" />
+
+        <LinearLayout
+            android:id="@+id/contentKomponenRumahSehat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/rounded_edit_text"
+            android:padding="10dp"
+            app:layout_constraintTop_toBottomOf="@id/cardSyaratRumahSehat"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="KOMPONEN RUMAH SEHAT"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:layout_marginBottom="6dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="• Bahan bangunan yang kokoh\n• Ada sistem ventilasi yang baik\n• Ada pencahayaan yang baik\n• Ada sistem pembuangan limbah"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Card: Bahaya Rumah Tidak Sehat -->
+    <LinearLayout
+        android:id="@+id/cardBahayaRumahTidakSehat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/rounded_edit_text"
+        android:padding="1dp"
+        app:layout_constraintTop_toBottomOf="@id/cardKomponenRumahSehat"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:layout_width="61dp"
+            android:layout_height="61dp"
+            android:layout_margin="20dp"
+            android:src="@drawable/bahaya_rumah"
+            android:id="@+id/bahayaRumah" />
+
+        <LinearLayout
+            android:id="@+id/contentBahayaRumahTidakSehat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/rounded_edit_text"
+            android:padding="10dp"
+            app:layout_constraintTop_toBottomOf="@id/cardKomponenRumahSehat"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BAHAYA RUMAH TIDAK SEHAT"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:layout_marginBottom="6dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="• Terjangkit penyakit\n• Sirkulasi pernapasan buruk\n• Rentan terjadi kecelakaan"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/navigation"
+        app:itemIconTint="#28844B"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:labelVisibilityMode="labeled"
+        app:itemTextColor="#28844B"
+        app:menu="@menu/bottom_navmenu"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

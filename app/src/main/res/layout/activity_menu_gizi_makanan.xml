@@ -5,12 +5,327 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginTop="20dp"
     tools:context=".MenuGiziMakanan">
 
-    <TextView
+    <!-- Search Section -->
+    <LinearLayout
+        android:id="@+id/searchContainer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Gizi Makanan"
-        tools:ignore="MissingConstraints" />
+        android:orientation="horizontal"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:background="@drawable/custom_search_button"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Search"
+                android:textSize="16sp"
+                android:fontFamily="@font/poppins_regular"
+                android:layout_gravity="center_vertical"
+                android:textAllCaps="false"
+                style="@style/text" />
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/search"
+                android:layout_gravity="center"
+                android:layout_marginStart="35dp"
+                android:layout_marginBottom="4dp" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/MenuEditProfile"
+            style="@style/ProfileBtn"
+            android:layout_marginLeft="150dp" />
+    </LinearLayout>
+
+    <!-- Title Section -->
+    <LinearLayout
+        android:id="@+id/GiziTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:gravity="center"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/rounded_background"
+        android:padding="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/searchContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:layout_width="61dp"
+            android:layout_height="61dp"
+            android:layout_marginRight="30dp"
+            android:src="@drawable/gizimakanan"
+            android:id="@+id/imgGizi" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gizi Makanan"
+            android:textSize="30dp"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Card: Kriteria Makanan Sehat -->
+    <LinearLayout
+        android:id="@+id/cardKriteriaMakananSehat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/rounded_edit_text"
+        android:padding="1dp"
+        app:layout_constraintTop_toBottomOf="@id/GiziTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:layout_width="61dp"
+            android:layout_height="61dp"
+            android:layout_margin="20dp"
+            android:src="@drawable/kriteria_makanan_sehat"
+            android:id="@+id/kriteriaMakananSehat" />
+
+        <LinearLayout
+            android:id="@+id/contentKriteriaMakananSehat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/rounded_edit_text"
+            android:padding="10dp"
+            app:layout_constraintTop_toBottomOf="@id/GiziTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="KRITERIA MAKANAN SEHAT"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="@color/black"
+                android:layout_marginBottom="6dp" />
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:rowCount="4"
+                android:layout_marginTop="4dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="• Karbohidrat"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:layout_marginEnd="16dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="• Kalsium"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="• Protein"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:layout_marginEnd="16dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="• Mineral"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="• Lemak"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:layout_marginEnd="16dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="• Serat"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="• Vitamin"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:layout_marginEnd="16dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="• Air"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
+
+            </GridLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Card: Panduan Pola Makan Sehat -->
+    <LinearLayout
+        android:id="@+id/cardPanduanPolaMakan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/rounded_edit_text"
+        android:padding="1dp"
+        app:layout_constraintTop_toBottomOf="@id/cardKriteriaMakananSehat"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:layout_width="61dp"
+            android:layout_height="61dp"
+            android:layout_margin="20dp"
+            android:src="@drawable/panduan_pola_makanan_sehat"
+            android:id="@+id/panduanPolaMakananSehat" />
+
+        <LinearLayout
+            android:id="@+id/contentPanduanPolaMakananSehat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/rounded_edit_text"
+            android:padding="10dp"
+            app:layout_constraintTop_toBottomOf="@id/GiziTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PANDUAN POLA MAKAN SEHAT"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="@color/black"
+                android:layout_marginBottom="6dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="• 1/2 piring sayur dan buah\n• 1/4 piring protein\n• 1/4 piring karbohidrat\n• Tambah sedikit minyak\n• Batasi konsumsi teh/kopi"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Card: Kurangi Konsumsi Ini -->
+    <LinearLayout
+        android:id="@+id/cardKurangiKonsumsi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/rounded_edit_text"
+        android:padding="1dp"
+        app:layout_constraintTop_toBottomOf="@id/cardPanduanPolaMakan"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:layout_width="61dp"
+            android:layout_height="61dp"
+            android:layout_margin="20dp"
+            android:src="@drawable/kurangi_konsumsi_ini"
+            android:id="@+id/kurangiKonsumsiIni" />
+
+        <LinearLayout
+            android:id="@+id/contentKurangiKonsumsi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/rounded_edit_text"
+            android:padding="10dp"
+            app:layout_constraintTop_toBottomOf="@id/GiziTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="KURANGI KONSUMSI INI!"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="@color/black"
+                android:layout_marginBottom="6dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="• Makanan yang digoreng\n• Soda\n• Minuman berenergi\n• Makanan cepat saji\n• Daging merah olahan"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/navigation"
+        app:itemIconTint="#28844B"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:labelVisibilityMode="labeled"
+        app:itemTextColor="#28844B"
+        app:menu="@menu/bottom_navmenu"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,12 +5,258 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_marginTop="20dp"
     tools:context=".MenuAktivitasSehat">
 
-    <TextView
+    <!-- Search Section -->
+    <LinearLayout
+        android:id="@+id/searchContainer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Aktivitas Sehat"
-        tools:ignore="MissingConstraints" />
+        android:orientation="horizontal"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:background="@drawable/custom_search_button"
+            android:gravity="center_vertical"
+            android:paddingLeft="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Search"
+                android:textSize="16sp"
+                android:fontFamily="@font/poppins_regular"
+                android:layout_gravity="center_vertical"
+                android:textAllCaps="false"
+                style="@style/text" />
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/search"
+                android:layout_gravity="center"
+                android:layout_marginStart="35dp"
+                android:layout_marginBottom="4dp" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/MenuEditProfile"
+            style="@style/ProfileBtn"
+            android:layout_marginLeft="150dp" />
+    </LinearLayout>
+
+    <!-- Title Section -->
+    <LinearLayout
+        android:id="@+id/AktivitasSehatTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:gravity="center"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/rounded_background"
+        android:padding="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/searchContainer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:layout_width="61dp"
+            android:layout_height="61dp"
+            android:layout_marginRight="30dp"
+            android:src="@drawable/aktivitas_sehat"
+            android:id="@+id/imgGizi" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Aktivitas Sehat"
+            android:textSize="30dp"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Card: Aktivitas Wajib Per Hari -->
+    <LinearLayout
+        android:id="@+id/cardAktivitasWajibPerHari"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/rounded_edit_text"
+        android:padding="1dp"
+        app:layout_constraintTop_toBottomOf="@id/AktivitasSehatTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:layout_width="61dp"
+            android:layout_height="61dp"
+            android:layout_margin="20dp"
+            android:src="@drawable/aktivitas_wajib_perhari"
+            android:id="@+id/aktivitasWajibPerHari" />
+
+        <LinearLayout
+            android:id="@+id/contentAktivitasWajibPerHari"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/rounded_edit_text"
+            android:padding="10dp"
+            app:layout_constraintTop_toBottomOf="@id/AktivitasSehatTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="AKTIVITAS WAJIB PER HARI"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:layout_marginBottom="6dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="• Setidaknya 21 menit olahraga ringan ATAU 11 menit olahraga berat\n• 12 atau 15 repetisi olahraga otot\n• Kurangi pemakaian gadget"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Card: Olahraga Ringan -->
+    <LinearLayout
+        android:id="@+id/cardOlahragaRingan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/rounded_edit_text"
+        android:padding="1dp"
+        app:layout_constraintTop_toBottomOf="@id/cardAktivitasWajibPerHari"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:layout_width="61dp"
+            android:layout_height="61dp"
+            android:layout_margin="20dp"
+            android:src="@drawable/olahraga_ringan"
+            android:id="@+id/olahragaRingan" />
+
+        <LinearLayout
+            android:id="@+id/contentOlahragaRingan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/rounded_edit_text"
+            android:padding="10dp"
+            app:layout_constraintTop_toBottomOf="@id/cardAktivitasWajibPerHari"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="OLAHRAGA RINGAN"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="@color/black"
+                android:layout_marginBottom="6dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="• Jalan Kaki\n• Berlari\n• Bersepeda\n• Naik turun tangga"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Card: Olahraga Ringan -->
+    <LinearLayout
+        android:id="@+id/cardOlahragaOtot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/rounded_edit_text"
+        android:padding="1dp"
+        app:layout_constraintTop_toBottomOf="@id/cardOlahragaRingan"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:layout_width="61dp"
+            android:layout_height="61dp"
+            android:layout_margin="20dp"
+            android:src="@drawable/olahraga_otot"
+            android:id="@+id/olahragaOtot" />
+
+        <LinearLayout
+            android:id="@+id/contentOlahragaOtot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/rounded_edit_text"
+            android:padding="10dp"
+            app:layout_constraintTop_toBottomOf="@id/cardOlahragaRingan"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="OLAHRAGA OTOT"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppins_bold"
+                android:textColor="@color/black"
+                android:layout_marginBottom="6dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="• Push-Up\n• Pull-Up\n• Plank\n• Sit-Up"
+                android:fontFamily="@font/poppins_semibold"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Bottom Navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/navigation"
+        app:itemIconTint="#28844B"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:labelVisibilityMode="labeled"
+        app:itemTextColor="#28844B"
+        app:menu="@menu/bottom_navmenu"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
